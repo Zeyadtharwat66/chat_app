@@ -1,5 +1,6 @@
 package com.example.webChat.user;
 
+import com.mongodb.lang.Nullable;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
@@ -12,5 +13,6 @@ public class User {
     @Id
     private String nickName;
     private String fullName;
+    @Nullable
     private Status status;
 }
