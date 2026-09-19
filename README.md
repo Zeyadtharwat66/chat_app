@@ -1,45 +1,118 @@
 # Real-Time Chat Application
 
-A Spring Boot real-time chat backend with WebSocket messaging, MongoDB persistence, and a browser-based client.
+A real-time chat backend built with **Java**, **Spring Boot**, **WebSocket**, and **MongoDB**.
 
-## Features
-- User management
-- Chat rooms
-- Real-time messaging over WebSocket
-- MongoDB persistence
-- REST endpoints for application operations
-- Docker Compose setup for MongoDB and Mongo Express
+The project provides backend functionality for users, chat rooms, and real-time messaging, with Docker Compose for local MongoDB infrastructure.
 
-## Tech Stack
-- Java
-- Spring Boot
-- Spring WebSocket
-- Spring Data MongoDB
-- Maven
-- Docker / Docker Compose
-- MongoDB
+## 🚀 Technologies
 
-## Configuration
-Credentials are supplied through environment variables rather than being committed to the repository.
+* Java
+* Spring Boot
+* Spring WebSocket
+* Spring Data MongoDB
+* MongoDB
+* Maven
+* Docker / Docker Compose
+* RESTful APIs
 
-Copy the example environment file and provide local values before starting Docker services.
+## 📁 Project Structure
 
-## Run
+```text
+src/
+├── main/
+│   ├── java/
+│   └── resources/
+│
+├── docker-compose.yml
+├── pom.xml
+├── .env.example
+└── README.md
+```
+
+The backend is organized around user, chat, chat-room, and configuration components.
+
+## ⚙️ Installation
+
+Clone the repository:
+
 ```bash
-docker compose up -d
+git clone https://github.com/Zeyadtharwat66/realtime-chat-app.git
+```
+
+Navigate to the project:
+
+```bash
+cd realtime-chat-app
+```
+
+Install and run the project with Maven:
+
+```bash
 ./mvnw spring-boot:run
 ```
 
 On Windows:
+
 ```powershell
-docker compose up -d
 .mvnw.cmd spring-boot:run
 ```
 
-The application uses port 8090 by default.
+## 🔐 Environment Variables
 
-## Architecture
-The backend is organized around user, chat, chat-room, and configuration components, with WebSocket support for real-time communication.
+Create your environment configuration based on `.env.example`.
 
-## Status
-Portfolio project demonstrating Spring Boot, WebSocket, MongoDB, and containerized local infrastructure.
+The project uses environment variables for MongoDB credentials and connection settings.
+
+> **Note:** Do not commit real database credentials.
+
+## ▶️ Running the Project
+
+Start the MongoDB services with Docker Compose:
+
+```bash
+docker compose up -d
+```
+
+Then start the Spring Boot application.
+
+The application uses port **8090** by default.
+
+## 📌 Main Features
+
+* User management
+* Chat rooms
+* Real-time messaging with WebSocket
+* MongoDB persistence
+* REST endpoints
+* Dockerized MongoDB infrastructure
+
+## 🛠️ Architecture
+
+The application combines REST APIs for application operations with WebSocket communication for real-time messaging.
+
+```text
+Client
+  ↓
+Spring Boot
+  ├── REST APIs
+  └── WebSocket
+        ↓
+     MongoDB
+```
+
+## 🔮 Future Improvements
+
+* User authentication and authorization
+* Private messaging
+* Message history pagination
+* Online/offline user status
+* Improved chat-room management
+* Production deployment
+
+## 👨‍💻 Author
+
+**Zeyad Tharwat**
+
+## 📄 License
+
+This project is for learning and development purposes.
